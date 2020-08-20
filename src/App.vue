@@ -58,7 +58,7 @@
 							<div class="content">
 								<div class="inner">
 									<h2>Buzzy Price</h2>
-									<p>Founder and CEO.  Built the ultimate eBay price tracker where we allow users to set custom alerts for price updates.</p>
+									<p>Founder and CEO.  Developed an eBay price tracker that allows users to set custom alerts for price updates on auction items.</p>
 									<ul class="actions">
 										<li><a href="https://buzzyprice.com" target="_blank" class="button">See Buzzy Price</a></li>
 									</ul>
@@ -70,7 +70,7 @@
 					<section id="skills" class="wrapper style3 fade-up">
 						<div class="inner">
 							<h2>Skills</h2>
-							<p>Six years litigation experience including thirteen jury trials.  Founder and CEO of two startup businesses.  Below are technical skills used to develop enterprise applications.</p>
+							<p>Below are the most frequently used technical skills. Additional skills include those gained from six years litigation experience (including thirteen jury trials) and serving as the founder and CEO of two startup businesses.</p>
 							<div class="features">
 								<section>
 									<span class="icon solid major"><i class="fab fa-angular"></i></span>
@@ -220,6 +220,10 @@ body {
 
 input, textarea, .error, .success-msg {
 	color: white !important;
+}
+
+.buzzycite-media-link {
+	border-bottom-color: black;
 }
 
 .wrapper.style1 {
