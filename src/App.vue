@@ -30,7 +30,7 @@
 				<!-- Projects -->
 					<section id="projects" class="wrapper style2 spotlights">
 						<section id="project-one">
-							<a id="test" href="#" class="image"><img src="../public/assets/images/buzzycite.jpg" alt="" data-position="center center" /></a>
+							<a href="https://buzzycite.com" target="_blank" class="image"><img src="../public/assets/images/buzzycite.jpg" alt="" data-position="center center" /></a>
 							<div class="content">
 								<div class="inner">
 									<h2>BuzzyCite</h2>
@@ -54,7 +54,7 @@
 							</div>
 						</section>
 						<section id="project-two">
-							<a href="#" class="image"><img src="../public/assets/images/buzzyprice.jpg" alt="" data-position="top center" /></a>
+							<a href="https://buzzyprice.com" target="_blank" class="image"><img src="../public/assets/images/buzzyprice.jpg" alt="" data-position="top center" /></a>
 							<div class="content">
 								<div class="inner">
 									<h2>Buzzy Price</h2>
@@ -112,24 +112,28 @@
 							<!-- <p>.</p> -->
 							<div class="split style1">
 								<section>
-									<form method="post" action="#">
+									<form method="post" action="#" v-on:submit.prevent>
 										<div class="fields">
 											<div class="field half">
 												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
+												<input type="text" name="name" id="name" v-model="name" maxlength="75" required />
 											</div>
 											<div class="field half">
 												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
+												<input type="email" name="email" id="email" v-model="email" maxlength="75" required />
 											</div>
 											<div class="field">
 												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
+												<textarea name="message" id="message" rows="5" v-model="message" style="resize: none;" maxlength="5000" required></textarea>
 											</div>
 										</div>
 										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
+											<li><a class="button submit" @click="sendMessage">Send Message</a></li>
 										</ul>
+										<div v-if="errors.length">
+											<div v-for="error of errors" v-bind:key="error" class="error">{{ error }}</div>
+										</div>
+										<div v-if="showSuccess" class="success-msg">Message successfully sent!</div>
 									</form>
 								</section>
 								<section>
@@ -152,8 +156,55 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'App',
+  data() {
+	return {
+		url: process.env.VUE_APP_URL,
+		email: '',
+		name: '',
+		message: '',
+		errors: [],
+		showSuccess: false
+	}
+  },
+  methods: {
+	async sendMessage() {
+		this.showSuccess = false;
+		this.errors = [];
+
+		if (this.email && this.name && this.message) {
+			const params = { userEmail: this.email.trim(), name: this.name.trim(), message: this.message.trim() }
+			
+			try {
+				const result = await axios.post(`${this.url}/contact-me`, params);
+				
+				if (result) {
+					this.showSuccess = true;
+					this.email = '';
+					this.name = '';
+					this.message = '';
+					setTimeout(() => this.showSuccess = false, 3000)
+				}
+			} catch {
+				this.email = '';
+				this.name = '';
+				this.message = '';
+			}
+		} else {
+			if (!this.email) {
+				this.errors.push('Please include an email.')
+			}
+			if (!this.name) {
+				this.errors.push('Please include your name.')
+			}
+			if (!this.message) {
+				this.errors.push('Please include a message.')
+			}
+		}
+	}
+  }
 }
 </script>
 
@@ -165,6 +216,10 @@ html {
 
 body {
 	background: #D1E8E2 !important;
+}
+
+input, textarea, .error, .success-msg {
+	color: white !important;
 }
 
 .wrapper.style1 {
