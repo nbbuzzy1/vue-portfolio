@@ -236,7 +236,6 @@ input, textarea, .error, .success-msg {
 
 #sidebar nav a {
 	color: #D1E8E2;
-	/* border-bottom: 1px solid #D1E8E2; */
 }
 
 #project-one {
