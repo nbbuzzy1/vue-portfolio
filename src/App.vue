@@ -85,7 +85,7 @@
 								<section>
 									<span class="icon solid major"><i class="fab fa-node"></i></span>
 									<h3>Node.js</h3>
-									<p>Implement this server technoology with BuzzyCite and Buzzy Price.  Express framework for API route management and database connections.</p>
+									<p>Implement this server technology with BuzzyCite and Buzzy Price.  Express framework for API route management and database connections.</p>
 								</section>
 								<section>
 									<span class="icon solid major"><i class="fab fa-python"></i></span>
