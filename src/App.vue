@@ -20,9 +20,9 @@
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
 							<h1>Nicholas Buzzy, J.D.</h1>
-							<p>Experienced senior software developer.  Former litigator.  Always an entrepreneur.</p>
+							<p>Front End Engineer II at Amazon Web Services.  Former litigator.  Always an entrepreneur.</p>
 							<ul class="actions">
-								<li><a href="#projects" class="button scrolly">Learn more</a></li>
+								<li><a href="#projects" class="button scrolly">projects</a></li>
 							</ul>
 						</div>
 					</section>
@@ -70,8 +70,12 @@
 					<section id="skills" class="wrapper style3 fade-up">
 						<div class="inner">
 							<h2>Skills</h2>
-							<p>Below are the most frequently used technical skills. Additional skills include those gained from six years litigation experience (including thirteen jury trials) and serving as the founder and CEO of two startup businesses.</p>
 							<div class="features">
+								<section>
+									<span class="icon solid major"><i class="fab fa-react"></i></span>
+									<h3>React</h3>
+									<p>Use at Amazon Web Services when developing machine learning products Amazon SageMaker Autopilot and Amazon SageMaker Canvas.</p>
+								</section>
 								<section>
 									<span class="icon solid major"><i class="fab fa-angular"></i></span>
 									<h3>Angular</h3>
@@ -86,11 +90,6 @@
 									<span class="icon solid major"><i class="fab fa-node"></i></span>
 									<h3>Node.js</h3>
 									<p>Implement this server technology with BuzzyCite and Buzzy Price.  Express framework for API route management and database connections.</p>
-								</section>
-								<section>
-									<span class="icon solid major"><i class="fab fa-python"></i></span>
-									<h3>Python</h3>
-									<p>Automation, data science, and web scraping for various applications.  Flask framework for building APIs.</p>
 								</section>
 								<section>
 									<span class="icon solid major fa-database"></span>
